@@ -28,6 +28,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 int depth(const binary_tree_t *tree)
 {
 	int depth = 0;
+
 	while (tree)
 	{
 		depth++;
@@ -44,5 +45,7 @@ int is_perfect_helper(const binary_tree_t *tree, int depth, int level)
 		return (depth == level);
 	if (!tree->left || !tree->right) /* One child is missing */
 		return (0);
-	return (is_perfect_helper(tree->left, depth, level + 1) && is_perfect_helper(tree->right, depth, level + 1));
+	return (
+			(is_perfect_helper(tree->left, depth, level + 1) &&
+			 is_perfect_helper(tree->right, depth, level + 1)));
 }
