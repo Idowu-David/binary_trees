@@ -37,6 +37,13 @@ int depth(const binary_tree_t *tree)
 	return (depth);
 }
 
+/**
+ * is_perfect_helper - to check for perfect tree
+ * @tree: a pointer to the tree
+ * @level: the level of the tree
+ * @depth: the depth of the tree
+ * Return: 1, if perfect, 0, otherwise
+ */
 int is_perfect_helper(const binary_tree_t *tree, int depth, int level)
 {
 	if (tree == NULL)
